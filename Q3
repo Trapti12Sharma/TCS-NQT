@@ -1,0 +1,32 @@
+An intelligence agency has received reports about some threats. The reports consist of numbers in a mysterious method. There is a number “N” and another number “R”.
+Those numbers are studied thoroughly and it is concluded that all digits of the number ‘N’ are summed up and this action is performed ‘R’ number of times. The resultant is also a single digit that is yet to be deciphered.
+The task here is to find the single-digit sum of the given number ‘N’ by repeating the action ‘R’ number of times
+
+SOLUTION
+#include<bits/stdc++.h>
+using namespace std;
+   int add(int n){
+        int a=0;
+       while(n!=0){
+       int rem =n%10;
+       a=a+rem;
+       n=n/10;
+       }  
+       return a;
+   }
+   
+   
+   
+int main(){
+    
+    int n;
+    cin>>n;
+    int r;
+    cin>>r;
+    int ans;
+    ans=add(n);
+    ans=r*ans;
+    ans=add(ans);
+    cout<<ans;
+    
+}
